@@ -1,0 +1,14 @@
+set runtimepath^=$HOME/.config/vim
+set runtimepath+=$HOME/.local/share/vim
+set runtimepath+=$HOME/.config/vim/after
+
+set packpath^=$HOME/.local/share/vim,$HOME/.config/vim
+set packpath+=$HOME/config/vim/after,$HOME/.local/share/vim/after
+
+set backupdir=$HOME/.cache/vim/backup | call mkdir(&backupdir, 'p')
+set directory=$HOME/.cache/vim/swap | call mkdir(&directory, 'p')
+set undodir=$HOME/.cache/vim/undo | call mkdir(&undodir, 'p')
+
+set viminfofile=$HOME/.cache/vim/viminfo
+
+let $MYVIMRC="$HOME/.config/vim/vimrc" | source $MYVIMRC

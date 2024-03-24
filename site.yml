@@ -1,0 +1,25 @@
+---
+- name: Dotfiles
+  hosts: localhost
+  tasks:
+
+    - name: Ensure $HOME/.config
+      ansible.builtin.file:
+        path: '{{ ansible_env.HOME }}/.config'
+        state: directory
+        mode: '755'
+
+    - name: Link dotfiles
+      ansible.builtin.file:
+        dest: '{{ ansible_env.HOME }}/.config/{{ item }}'
+        src: '{{ playbook_dir }}/config/{{ item }}'
+        state: link
+      with_lines: ls -1 {{ playbook_dir }}/config
+
+    - name: Vimrc
+      ansible.builtin.blockinfile:
+        path: '{{ ansible_env.HOME }}/.vimrc'
+        create: true
+        mode: '644'
+        marker: '" {mark} ANSIBLE MANAGED BLOCK'
+        block: '{{ lookup("file", "{{ playbook_dir }}/home/vimrc") }}'
