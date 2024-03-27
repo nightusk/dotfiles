@@ -1,0 +1,87 @@
+" vim: foldmethod=marker
+
+" {{{ options
+" {{{  1 important
+" }}}
+" {{{  2 moving around, searching and patterns
+set nowrapscan
+set incsearch
+set ignorecase
+set smartcase
+" }}}
+" {{{  3 tags
+" }}}
+" {{{  4 displaying text
+set scrolloff=5
+set nowrap
+set list
+set listchars+=extends:>
+set listchars+=precedes:<
+set listchars+=tab:\\_
+set listchars+=trail:%
+" }}}
+" {{{  5 syntax, highlighting and spelling
+set hlsearch
+set cursorline
+" }}}
+" {{{  6 multiple windows
+set laststatus=2
+set hidden
+" }}}
+" {{{  7 multiple tab pages
+" }}}
+" {{{  8 terminal
+" }}}
+" {{{  9 using the mouse
+" }}}
+" {{{ 10 printing
+" }}}
+" {{{ 11 messages and info
+set showcmd
+set ruler
+" }}}
+" {{{ 12 selecting text
+" }}}
+" {{{ 13 editing text
+set backspace+=indent
+set backspace+=eol
+set backspace+=start
+set showmatch
+set nrformats-=octal
+" }}}
+" {{{ 14 tabs and indenting
+" }}}
+" {{{ 15 folding
+" }}}
+" {{{ 16 diff mode
+" }}}
+" {{{ 17 mapping
+" }}}
+" {{{ 18 reading and writing files
+set autoread
+" }}}
+" {{{ 19 the swap file
+set noswapfile
+" }}}
+" {{{ 20 command line editing
+set wildmenu
+" }}}
+" {{{ 21 executing external commands
+" }}}
+" {{{ 22 running make and jumping to errors (quickfix)
+" }}}
+" {{{ 23 language specific
+" }}}
+" {{{ 24 multi-byte characters
+" }}}
+" {{{ 25 various
+" }}}
+" }}}
+
+colorscheme torte
+
+packadd! editorconfig
+packadd! termdebug
+
+syntax enable
+filetype plugin indent on
