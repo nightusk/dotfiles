@@ -16,10 +16,16 @@
         state: link
       with_lines: ls -1 {{ playbook_dir }}/config
 
-    - name: Vimrc
+    - name: Ensure block in file at home
       ansible.builtin.blockinfile:
-        path: '{{ ansible_env.HOME }}/.vimrc'
+        path: '{{ ansible_env.HOME }}/.{{ item }}'
         create: true
         mode: '644'
-        marker: '" {mark} ANSIBLE MANAGED BLOCK'
-        block: '{{ lookup("file", "{{ playbook_dir }}/home/vimrc") }}'
+        block: '{{ lookup("file", "{{ playbook_dir }}/home/{{ item }}") }}'
+      with_lines: ls -1 {{ playbook_dir }}/home
+
+    - name: Use vim9script
+      ansible.builtin.lineinfile:
+        path: '{{ ansible_env.HOME }}/.vimrc'
+        insertbefore: BOF
+        line: vim9script

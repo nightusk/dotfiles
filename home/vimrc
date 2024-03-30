@@ -11,4 +11,4 @@ set undodir=$HOME/.cache/vim/undo | call mkdir(&undodir, 'p')
 
 set viminfofile=$HOME/.cache/vim/viminfo
 
-let $MYVIMRC="$HOME/.config/vim/vimrc" | source $MYVIMRC
+$MYVIMRC = "$HOME/.config/vim/vimrc" | source $MYVIMRC
