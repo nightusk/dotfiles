@@ -1,3 +1,5 @@
+let mapleader = "\<space>"
+
 augroup MyAutoCmd
   autocmd!
 augroup END

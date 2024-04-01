@@ -21,6 +21,7 @@ export class Config extends BaseConfig {
     for (const tomlFile of [
       "plugins.toml",
       "ddc/plugins.toml",
+      "ddu/plugins.toml",
     ]) {
       const toml = await args.dpp.extAction(args.denops, context, options, "toml", "load", {
         path: "$BASE_DIR/" + tomlFile,
