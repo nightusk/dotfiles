@@ -66,3 +66,5 @@ vim.opt.swapfile = false
 -- }}}
 
 vim.cmd("colorscheme torte")
+
+vim.cmd("source " .. (vim.fn.expand("<script>:h:h") .. "/vim/dpp/init.vim"))
