@@ -84,5 +84,4 @@ colorscheme torte
 packadd! editorconfig
 packadd! termdebug
 
-syntax enable
-filetype plugin indent on
+source <script>:h/dpp/init.vim
