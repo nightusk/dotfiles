@@ -34,7 +34,7 @@ if dpp#min#load_state(s:dpp_base)
         \ | echohl NONE
         \ | call dpp#make_state(s:dpp_base, $BASE_DIR .. '/config.ts')
 else
-  autocmd MyAutoCmd BufWritePost *.vim,*.ts,*.toml
+  autocmd MyAutoCmd BufWritePost *.vim,*.lua,*.ts,*.toml
         \ call dpp#check_files()
   autocmd MyAutoCmd User DenopsReady
         \ call dpp#async_ext_action('installer', 'install')

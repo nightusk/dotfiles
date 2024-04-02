@@ -9,7 +9,7 @@ import {
 } from "https://deno.land/x/dpp_vim@v0.1.0/types.ts";
 
 export class Config extends BaseConfig {
-  override async config(args: ConfigArguments): ConfigReturn | Promise<ConfigReturn> {
+  override async config(args: ConfigArguments):  Promise<ConfigReturn> {
     args.contextBuilder.setGlobal({
       protocols: ["git"],
     });

@@ -1,5 +1,13 @@
 [[plugins]]
+repo = 'neovim/nvim-lspconfig'
+hooks_file = '$BASE_DIR/ddc/lsp.lua'
+
+[[plugins]]
 repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-lsp'
 on_source = 'ddc.vim'
 
 [[plugins]]
