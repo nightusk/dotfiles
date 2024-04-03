@@ -1,4 +1,13 @@
 [[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
 repo = 'Shougo/dpp-ext-installer'
 on_source = 'dpp.vim'
 
@@ -17,6 +26,18 @@ on_source = 'dpp.vim'
 [[plugins]]
 repo = 'Shougo/dpp.vim'
 on_source = 'denops.vim'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'tpope/vim-unimpaired'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
