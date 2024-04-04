@@ -30,5 +30,5 @@
 
 (use-package editorconfig
   :ensure t
-  :config
-  (editorconfig-mode 1))
+  :custom
+  (editorconfig-mode t))
