@@ -1,6 +1,6 @@
 (use-package autorevert
   :custom
-  (global-autp-revert-mode t))
+  (global-auto-revert-mode t))
 
 (use-package cus-edit
   :custom
