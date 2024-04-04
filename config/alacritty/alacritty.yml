@@ -1,0 +1,10 @@
+window:
+  opacity: 0.6
+  dynamic_title: false
+
+shell:
+  program: /bin/dash
+  args:
+    - -l
+    - -c
+    - "zellij attach --create"
