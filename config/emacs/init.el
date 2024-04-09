@@ -6,18 +6,33 @@
   :custom
   (custom-file (locate-user-emacs-file "custom.el")))
 
- (use-package custom
+(use-package cus-start
+  :defer t
   :custom
-  (custom-enabled-themes '(modus-vivendi))
-  (menu-bar-mode nil))
+  (create-lockfiles nil)
+  (menu-bar-mode nil)
+  (tool-bar-mode nil))
+
+(use-package custom
+  :custom
+  (custom-enabled-themes '(modus-vivendi)))
 
 (use-package elec-pair
   :custom
   (electric-pair-mode t))
 
+(use-package files
+  :custom
+  (auto-save-default nil)
+  (make-backup-files nil))
+
 (use-package icomplete
   :custom
   (fido-vertical-mode t))
+
+(use-package scroll-bar
+  :custom
+  (scroll-bar-mode nil))
 
 (use-package simple
   :custom
