@@ -1,7 +1,7 @@
 # vim: filetype=sh
 export CARGO_HOME=$HOME/.local/share/cargo
-export RUSTUP_HOME=$HOME/.local/share/rustup
 export DENO_INSTALL=$HOME/.local
+export RUSTUP_HOME=$HOME/.local/share/rustup
 
 for p in $CARGO_HOME $HOME/.local
 do
