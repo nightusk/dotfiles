@@ -11,7 +11,8 @@
   :custom
   (create-lockfiles nil)
   (menu-bar-mode nil)
-  (tool-bar-mode nil))
+  (tool-bar-mode nil)
+  (use-short-answers t))
 
 (use-package custom
   :custom
