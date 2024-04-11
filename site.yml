@@ -30,6 +30,9 @@
 
     - name: Use vim9script
       ansible.builtin.lineinfile:
-        path: '{{ ansible_env.HOME }}/.vimrc'
+        path: '{{ ansible_env.HOME }}/.{{ item }}'
         insertbefore: BOF
         line: vim9script
+      loop:
+        - gvimrc
+        - vimrc

@@ -1,0 +1,9 @@
+vim9script
+# vim: foldmethod=marker
+
+# {{{ options
+# {{{  10 GUI
+set guioptions-=m
+set guioptions-=T
+# }}}
+# }}}

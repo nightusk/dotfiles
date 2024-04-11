@@ -1,0 +1,1 @@
+$MYGVIMRC = "$HOME/.config/vim/gvimrc" | source $MYGVIMRC
