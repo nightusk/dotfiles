@@ -1,0 +1,21 @@
+---
+- name: Git clone
+  ansible.builtin.git:
+    depth: 1
+    dest: '{{ src }}'
+    repo: '{{ repo }}'
+    version: '{{ version }}'
+
+- name: Make
+  community.general.make:
+    chdir: '{{ src }}'
+    params:
+      CMAKE_BUILD_TYPE: Release
+      CMAKE_EXTRA_FLAGS: '-DCMAKE_INSTALL_PREFIX={{ prefix }}'
+
+- name: Make install
+  community.general.make:
+    chdir: '{{ src }}'
+    target: install
+    params:
+      prefix: '{{ prefix }}'

@@ -1,8 +1,12 @@
 ---
 - name: Dotfiles
   hosts: localhost
-  tasks:
+  roles:
+    - emacs
+    - neovim
+    - vim
 
+  tasks:
     - name: Ensure $HOME/.config
       ansible.builtin.file:
         path: '{{ ansible_env.HOME }}/.config'

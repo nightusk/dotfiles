@@ -1,0 +1,28 @@
+---
+- name: Git clone
+  ansible.builtin.git:
+    depth: 1
+    dest: '{{ src }}'
+    force: true
+    repo: '{{ repo }}'
+    version: '{{ version }}'
+
+- name: Make config
+  community.general.make:
+    chdir: '{{ src }}'
+    target: config
+    params:
+      prefix: '{{ prefix }}'
+
+- name: Make
+  community.general.make:
+    chdir: '{{ src }}'
+    params:
+      prefix: '{{ prefix }}'
+
+- name: Make install
+  community.general.make:
+    chdir: '{{ src }}'
+    target: install
+    params:
+      prefix: '{{ prefix }}'

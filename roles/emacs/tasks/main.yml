@@ -1,0 +1,24 @@
+---
+- name: Git clone
+  ansible.builtin.git:
+    depth: 1
+    dest: '{{ src }}'
+    repo: '{{ repo }}'
+    version: '{{ version }}'
+
+- name: Make
+  community.general.make:
+    chdir: '{{ src }}'
+    params:
+      configure: >-
+        "
+        --prefix={{ prefix }}
+        --with-gif=ifavailable
+        --with-pgtk
+        --with-xpm=ifavailable
+        "
+
+- name: Make install
+  community.general.make:
+    chdir: '{{ src }}'
+    target: install

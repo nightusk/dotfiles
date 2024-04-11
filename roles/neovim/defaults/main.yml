@@ -1,0 +1,5 @@
+---
+prefix: '{{ ansible_env.HOME }}/.local'
+repo: 'https://github.com/neovim/neovim.git'
+src: '{{ ansible_env.HOME }}/.local/src/neovim'
+version: master

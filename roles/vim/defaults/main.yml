@@ -1,0 +1,5 @@
+---
+prefix: '{{ ansible_env.HOME }}/.local'
+repo: 'https://github.com/vim/vim.git'
+src: '{{ ansible_env.HOME }}/.local/src/vim '
+version: master
