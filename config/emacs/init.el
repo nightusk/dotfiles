@@ -50,6 +50,13 @@
   :custom
   (global-whitespace-mode t))
 
+(use-package corfu
+  :ensure t
+  :custom
+  (corfu-auto t)
+  :init
+  (global-corfu-mode 1))
+
 (use-package editorconfig
   :ensure t
   :custom
