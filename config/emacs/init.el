@@ -40,6 +40,11 @@
   (column-number-mode t)
   (normal-erase-is-backspace t))
 
+(use-package startup
+  :defer t
+  :custom
+  (inhibit-startup-screen t))
+
 (use-package whitespace
   :custom
   (global-whitespace-mode t))
