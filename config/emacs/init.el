@@ -54,3 +54,10 @@
   :ensure t
   :custom
   (editorconfig-mode t))
+
+(use-package meow
+  :ensure t
+  :config
+  (load (locate-user-emacs-file "meow-qwerty.el"))
+  (meow-setup)
+  (meow-global-mode 1))
