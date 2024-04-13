@@ -38,7 +38,8 @@
 (use-package simple
   :custom
   (column-number-mode t)
-  (normal-erase-is-backspace t))
+  :bind*
+  ("C-h" . delete-backward-char))
 
 (use-package startup
   :defer t
