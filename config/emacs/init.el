@@ -57,6 +57,11 @@
   :init
   (global-corfu-mode 1))
 
+(use-package diff-hl
+  :ensure t
+  :custom
+  (global-diff-hl-mode t))
+
 (use-package editorconfig
   :ensure t
   :custom
