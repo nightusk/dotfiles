@@ -69,6 +69,8 @@
 
 (use-package meow
   :ensure t
+  :custom
+  (meow-use-cursor-position-hack t)
   :config
   (load (locate-user-emacs-file "meow-qwerty.el"))
   (meow-setup)
