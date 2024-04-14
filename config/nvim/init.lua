@@ -65,6 +65,11 @@ vim.opt.swapfile = false
 -- }}}
 -- }}}
 
+if vim.g.neovide then -- {{{
+  vim.g.neovide_transparency = 0.7
+  vim.g.neovide_cursor_vfx_mode = "railgun"
+end -- }}}
+
 vim.cmd("colorscheme torte")
 
 vim.cmd("source " .. (vim.fn.expand("<script>:h:h") .. "/vim/dpp/init.vim"))
