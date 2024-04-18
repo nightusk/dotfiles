@@ -79,4 +79,30 @@
     :config
     (load (locate-user-emacs-file "meow-qwerty.el"))
     (meow-setup)
-    (meow-global-mode 1)))
+    (meow-global-mode 1))
+
+  (use-package org
+    :ensure org-contrib
+    :config
+    (use-package ox-taskjuggler)
+    (use-package org-modern
+      :ensure t
+      :hook
+      (org-mode . org-modern-mode))
+
+    (use-package org-roam
+      :ensure t
+      :custom
+      (org-roam-directory (file-truename org-directory))
+      (org-roam-file-name-extension '("org" "md"))
+      :bind
+      ("C-c n l" . org-roam-buffer-toggle)
+      ("C-c n f" . org-roam-node-find)
+      ("C-c n g" . org-roam-graph)
+      ("C-c n i" . org-roam-node-insert)
+      ("C-c n j" . org-roam-dailies-capture-today)
+      :config
+      (use-package md-roam
+        :vc (:url "https://github.com/nobiot/md-roam.git"))
+      (md-roam-mode 1)
+      (org-roam-db-autosync-mode))))
