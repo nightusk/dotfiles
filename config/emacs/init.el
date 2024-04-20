@@ -83,10 +83,14 @@
 
   (use-package org
     :ensure org-contrib
+    :custom
+    (org-hide-leading-stars t)
     :config
     (use-package ox-taskjuggler)
     (use-package org-modern
       :ensure t
+      :custom
+      (org-modern-star nil)
       :hook
       (org-mode . org-modern-mode))
 
