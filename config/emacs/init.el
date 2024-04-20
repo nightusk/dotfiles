@@ -62,6 +62,11 @@
     :init
     (global-corfu-mode 1))
 
+  (use-package ddskk
+    :ensure t
+    :custom
+    (default-input-method "japanese-skk"))
+
   (use-package diff-hl
     :ensure t
     :custom
