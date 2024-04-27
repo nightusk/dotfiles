@@ -10,6 +10,7 @@ export class Config extends BaseConfig {
       sources: [
         "around",
         "lsp",
+        "skkeleton"
       ],
       sourceOptions: {
         _: {
@@ -23,6 +24,14 @@ export class Config extends BaseConfig {
           mark: 'lsp',
           forceCompletionPattern: '\.\w*|:\w*|->\w*',
         },
+        skkeleton: {
+          mark: 'skk',
+          matchers: [],
+          sorters: [],
+          converters: [],
+          isVolatile: true,
+          minAutoCompleteLength: 1
+        }
       },
       sourceParams: {
         around: { maxSize: 500, },
