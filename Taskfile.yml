@@ -1,0 +1,41 @@
+---
+version: '3'
+
+tasks:
+  default:
+    platforms:
+      - windows
+    cmds:
+      - for:
+        - emacs
+        - neovim
+        - vim
+        task: '{{.ITEM}}'
+
+  emacs:
+    internal: true
+    cmds:
+      - >-
+        CMD /C
+        IF NOT EXIST '{{joinPath .APPDATA ".emacs.d"}}'
+        MKLINK /J    '{{joinPath .APPDATA ".emacs.d"}}' '{{joinPath .TASKFILE_DIR "config" "emacs"}}'
+
+  neovim:
+    internal: true
+    cmds:
+      - >-
+        CMD /C
+        IF NOT EXIST '{{joinPath .LOCALAPPDATA "nvim"}}'
+        MKLINK /J    '{{joinPath .LOCALAPPDATA "nvim"}}' '{{joinPath .TASKFILE_DIR "config" "nvim"}}'
+      - >-
+        CMD /C
+        IF NOT EXIST '{{joinPath .LOCALAPPDATA "vim"}}'
+        MKLINK /J    '{{joinPath .LOCALAPPDATA "vim"}}' '{{joinPath .TASKFILE_DIR "config" "vim"}}'
+
+  vim:
+    internal: true
+    cmds:
+      - >-
+        CMD /C
+        IF NOT EXIST '{{joinPath .USERPROFILE "vimfiles"}}'
+        MKLINK /J    '{{joinPath .USERPROFILE "vimfiles"}}' '{{joinPath .TASKFILE_DIR "config" "vim"}}'
