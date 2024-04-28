@@ -89,6 +89,7 @@
   (use-package org
     :ensure org-contrib
     :custom
+    (org-columns-default-format "%25ITEM %TODO %3PRIORITY %TAGS %SCHEDULED %DEADLINE")
     (org-hide-leading-stars t)
     :config
     (use-package ox-taskjuggler)
@@ -102,6 +103,11 @@
     (use-package org-roam
       :ensure t
       :custom
+      (org-roam-capture-templates '(("d" "default" plain "%?"
+                                     :target (file+head
+                                              "%<%Y%m%d%H%M%S>.org"
+                                              "#+title: ${title}\n")
+                                     :unnarrowed t)))
       (org-roam-directory (file-truename org-directory))
       (org-roam-file-name-extension '("org" "md"))
       :bind
