@@ -50,7 +50,7 @@
    '("G" . (lambda () (interactive) (meow-end-of-thing ?b)))
    '("H" . meow-left-expand)
    '("I" . (lambda () (interactive) (meow-beginning-of-thing ?l) (meow-append)))
-   '("J" . (lambda () (interactive) (meow-join 1) (meow-kill)))
+   '("J" . (lambda () (interactive) (meow-join -1) (meow-kill)))
    '("K" . meow-prev-expand)
    '("L" . meow-right-expand)
    '("O" . meow-open-above)
