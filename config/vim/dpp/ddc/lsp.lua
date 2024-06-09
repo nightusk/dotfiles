@@ -1,12 +1,29 @@
 -- lua_add {{{
 local lspconfig = require('lspconfig')
 local capabilities = require('ddc_source_lsp').make_client_capabilities()
+local group = vim.api.nvim_create_augroup('UserLspConfig', {})
+local on_attach = function(client, bufnr)
+  vim.api.nvim_clear_autocmds({
+    buffer = bufnr,
+    group = group,
+  })
+  if client.supports_method('textDocument/formatting') then
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      buffer = bufnr,
+      group = group,
+      callback = function()
+        vim.lsp.buf.format {async = false}
+      end,
+    })
+  end
+end
 for _, lsp in ipairs({
   'denols',
   'rust_analyzer',
 }) do
   lspconfig[lsp].setup({
     capabilities = capabilities,
+    on_attach = on_attach,
   })
 end
 
