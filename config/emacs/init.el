@@ -32,6 +32,13 @@
     (auto-save-default nil)
     (make-backup-files nil))
 
+  (use-package frame
+    :config
+    (when window-system
+      (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+      (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+      (set-frame-parameter nil 'fullscreen 'maximized)))
+
   (use-package icomplete
     :custom
     (fido-vertical-mode t))
@@ -77,6 +84,14 @@
     :custom
     (editorconfig-mode t))
 
+  (use-package geiser
+    :ensure geiser-chez)
+
+  (use-package marginalia
+    :ensure t
+    :custom
+    (marginalia-mode t))
+
   (use-package meow
     :ensure t
     :custom
@@ -120,4 +135,7 @@
       (use-package md-roam
         :vc (:url "https://github.com/nobiot/md-roam.git"))
       (md-roam-mode 1)
-      (org-roam-db-autosync-mode))))
+      (org-roam-db-autosync-mode)))
+
+  (use-package sly
+    :ensure t))

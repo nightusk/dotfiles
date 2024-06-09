@@ -49,7 +49,7 @@
    '("E" . meow-mark-symbol)
    '("G" . (lambda () (interactive) (meow-end-of-thing ?b)))
    '("H" . meow-left-expand)
-   '("I" . (lambda () (interactive) (meow-beginning-of-thing ?l) (meow-append)))
+   '("I" . (lambda () (interactive) (meow-beginning-of-thing ?l) (meow-insert)))
    '("J" . (lambda () (interactive) (meow-join -1) (meow-kill)))
    '("K" . meow-prev-expand)
    '("L" . meow-right-expand)
