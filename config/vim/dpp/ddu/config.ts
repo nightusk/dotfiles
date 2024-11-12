@@ -1,10 +1,10 @@
 import {
   BaseConfig,
   ConfigArguments,
-} from "https://deno.land/x/ddu_vim@v3.10.3/base/config.ts";
+} from "https://deno.land/x/ddu_vim@v5.0.0/base/config.ts";
 
 export class Config extends BaseConfig {
-  override async config(args: ConfigArguments): Promise<void> {
+  override config(args: ConfigArguments): void {
     args.contextBuilder.patchGlobal({
       ui: "ff",
       sources: [
@@ -21,4 +21,3 @@ export class Config extends BaseConfig {
     });
   }
 }
-
