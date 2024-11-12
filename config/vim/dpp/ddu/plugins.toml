@@ -3,6 +3,10 @@ repo = 'Shougo/ddu-commands.vim'
 depends = 'ddu.vim'
 
 [[plugins]]
+repo = 'Shougo/ddu-filter-matcher_ignore_files'
+on_source = 'ddu.vim'
+
+[[plugins]]
 repo = 'Shougo/ddu-filter-matcher_substring'
 on_source = 'ddu.vim'
 

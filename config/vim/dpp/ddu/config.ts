@@ -12,11 +12,28 @@ export class Config extends BaseConfig {
       ],
       sourceOptions: {
         _: {
-          matchers: ['matcher_substring'],
+          matchers: [
+            "matcher_ignore_files",
+            "matcher_substring",
+          ],
+        },
+      },
+      filterParams: {
+        matcher_ignore_files: {
+          ignoreGlobs: [
+            "*.elc",
+            "*.eln",
+            "*.tmp",
+          ],
+          ignorePatterns: [
+            "(^|/)[.].*",
+            "(^|/)bak/.*",
+            "(^|/)target/.*",
+          ],
         },
       },
       kindOptions: {
-        file: { defaultAction: "open", },
+        file: { defaultAction: "open" },
       },
     });
   }
