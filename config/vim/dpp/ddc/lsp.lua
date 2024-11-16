@@ -19,6 +19,7 @@ local on_attach = function(client, bufnr)
 end
 for _, lsp in ipairs({
   'denols',
+  'nim_langserver',
   'rust_analyzer',
 }) do
   lspconfig[lsp].setup({
