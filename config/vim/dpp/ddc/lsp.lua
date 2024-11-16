@@ -21,6 +21,7 @@ for _, lsp in ipairs({
   'denols',
   'nim_langserver',
   'rust_analyzer',
+  'zls',
 }) do
   lspconfig[lsp].setup({
     capabilities = capabilities,

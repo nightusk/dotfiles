@@ -29,6 +29,7 @@ export class Config extends BaseConfig {
             "(^|/)[.].*",
             "(^|/)bak/.*",
             "(^|/)target/.*",
+            "(^|/)zig-out/.*",
           ],
         },
       },
