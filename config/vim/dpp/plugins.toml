@@ -8,6 +8,10 @@ repo = 'cohama/lexima.vim'
 repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
+repo = 'nvim-orgmode/orgmode'
+hooks_file = '$BASE_DIR/orgmode.lua'
+
+[[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 hooks_file = '$BASE_DIR/treesitter.lua'
 

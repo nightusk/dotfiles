@@ -1,6 +1,4 @@
-import {
-  expandGlob,
-} from "https://deno.land/std@0.221.0/fs/expand_glob.ts";
+import { expandGlob } from "https://deno.land/std@0.221.0/fs/expand_glob.ts";
 import {
   BaseConfig,
   ConfigArguments,
@@ -9,7 +7,7 @@ import {
 } from "https://deno.land/x/dpp_vim@v0.1.0/types.ts";
 
 export class Config extends BaseConfig {
-  override async config(args: ConfigArguments):  Promise<ConfigReturn> {
+  override async config(args: ConfigArguments): Promise<ConfigReturn> {
     args.contextBuilder.setGlobal({
       protocols: ["git"],
     });
@@ -18,17 +16,27 @@ export class Config extends BaseConfig {
     const recordPlugins: Record<string, Plugin> = {};
     const ftplugins: Record<string, string> = {};
     const hooksFiles: string[] = [];
-    for (const tomlFile of [
-      "plugins.toml",
-      "ddc/plugins.toml",
-      "ddu/plugins.toml",
-    ]) {
-      const toml = await args.dpp.extAction(args.denops, context, options, "toml", "load", {
-        path: "$BASE_DIR/" + tomlFile,
-        options: {
-          lazy: false,
+    for (
+      const tomlFile of [
+        "plugins.toml",
+        "ddc/plugins.toml",
+        "ddu/plugins.toml",
+        "lazy/plugins.toml",
+      ]
+    ) {
+      const toml = await args.dpp.extAction(
+        args.denops,
+        context,
+        options,
+        "toml",
+        "load",
+        {
+          path: "$BASE_DIR/" + tomlFile,
+          options: {
+            lazy: tomlFile.startsWith("lazy"),
+          },
         },
-      });
+      );
       for (const plugin of toml.plugins) {
         recordPlugins[plugin.name] = plugin;
       }
@@ -46,9 +54,16 @@ export class Config extends BaseConfig {
       }
     }
 
-    const lazy = await args.dpp.extAction(args.denops, context, options, "lazy", "makeState", {
-      plugins: Object.values(recordPlugins),
-    });
+    const lazy = await args.dpp.extAction(
+      args.denops,
+      context,
+      options,
+      "lazy",
+      "makeState",
+      {
+        plugins: Object.values(recordPlugins),
+      },
+    );
 
     const checkFiles = [];
     for await (const file of expandGlob(`${Deno.env.get("BASE_DIR")}/*`)) {

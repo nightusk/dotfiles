@@ -1,0 +1,4 @@
+[[plugins]]
+repo = 'chipsenkbeil/org-roam.nvim'
+on_map = { n = '<Leader>n' }
+hooks_file = '$BASE_DIR/lazy/org-roam.lua'
