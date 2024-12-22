@@ -36,8 +36,8 @@ vim.opt.cursorline = true
 vim.opt.clipboard:append("unnamed")
 -- }}}
 -- {{{ 12 editing text
--- }}}
 vim.opt.showmatch = true
+-- }}}
 -- {{{ 13 tabs and indenting
 -- }}}
 -- {{{ 14 folding
@@ -49,8 +49,8 @@ vim.opt.showmatch = true
 -- {{{ 17 reading and writing files
 -- }}}
 -- {{{ 18 the swap file
--- }}}
 vim.opt.swapfile = false
+-- }}}
 -- {{{ 19 command line editing
 -- }}}
 -- {{{ 20 executing external commands
