@@ -1,0 +1,25 @@
+Backups
+Cache
+CachedData
+CachedExtensionVSIXs
+CachedProfilesData
+Code Cache
+Crashpad
+DawnGraphiteCache
+DawnWebGPUCache
+GPUCache
+History
+Local State
+Local Storage
+Network
+Service Worker
+Session Storage
+Shared Dictionary
+SharedStorage
+SharedStorage-wal
+WebStorage
+code.lock
+globalStorage
+logs
+machineid
+workspaceStorage
