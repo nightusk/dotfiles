@@ -6,4 +6,5 @@ custom.el
 eln-cache
 elpa
 eshell
+org-persist
 projects

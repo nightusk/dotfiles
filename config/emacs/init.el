@@ -1,3 +1,6 @@
+(set-language-environment 'Japanese)
+(prefer-coding-system 'utf-8-unix)
+
 (use-package package
   :config
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -104,9 +107,15 @@
   (use-package org
     :ensure org-contrib
     :custom
+    (org-babel-load-languages
+     '((emacs-lisp . t)
+       (dot        . t)))
     (org-columns-default-format "%25ITEM %TODO %3PRIORITY %TAGS %SCHEDULED %DEADLINE")
     (org-hide-leading-stars t)
     :config
+    (use-package ob-core
+      :custom
+      (org-confirm-babel-evaluate nil))
     (use-package ox-taskjuggler)
     (use-package org-modern
       :ensure t
@@ -120,11 +129,10 @@
       :custom
       (org-roam-capture-templates '(("d" "default" plain "%?"
                                      :target (file+head
-                                              "%<%Y%m%d%H%M%S>.org"
+                                              "pages/inbox/%<%Y%m%d%H%M%S>.org"
                                               "#+title: ${title}\n")
                                      :unnarrowed t)))
       (org-roam-directory (file-truename org-directory))
-      (org-roam-file-name-extension '("org" "md"))
       :bind
       ("C-c n l" . org-roam-buffer-toggle)
       ("C-c n f" . org-roam-node-find)
