@@ -132,9 +132,9 @@
       ("C-c n i" . org-roam-node-insert)
       ("C-c n j" . org-roam-dailies-capture-today)
       :config
-      (use-package md-roam
-        :vc (:url "https://github.com/nobiot/md-roam.git"))
-      (md-roam-mode 1)
+      ;; (use-package md-roam
+      ;;   :vc (:url "https://github.com/nobiot/md-roam.git"))
+      ;; (md-roam-mode 1)
       (org-roam-db-autosync-mode)))
 
   (use-package sly
