@@ -11,8 +11,7 @@
     chdir: '{{ src }}'
     params:
       configure: >-
-        "
-        --prefix={{ prefix }}
+        "--prefix={{ prefix }}
         --with-gif=ifavailable
         --with-pgtk
         --with-xpm=ifavailable
