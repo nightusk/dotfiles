@@ -5,5 +5,7 @@
     "explorer.confirmDragAndDrop": false,
     "makefile.configureOnOpen": true,
     "clangd.path": "c:\\Users\\night\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\19.1.2\\clangd_19.1.2\\bin\\clangd.exe",
-    "C_Cpp.intelliSenseEngine": "disabled"
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "editor.fontFamily": "'Cascadia Code', 'BIZ UDGothic', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true
 }

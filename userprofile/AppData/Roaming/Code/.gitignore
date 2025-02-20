@@ -1,5 +1,6 @@
 Backups
 Cache
+CachedConfigurations
 CachedData
 CachedExtensionVSIXs
 CachedProfilesData
@@ -18,6 +19,7 @@ Shared Dictionary
 SharedStorage
 SharedStorage-wal
 WebStorage
+blob_storage
 code.lock
 globalStorage
 logs
