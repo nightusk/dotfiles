@@ -11,18 +11,48 @@
     ],
     "profiles": 
     {
-        "defaults": {},
+        "defaults": 
+        {
+            "font": 
+            {
+                "face": "Cascadia Code, BIZ UDGothic"
+            }
+        },
         "list": 
         [
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Windows PowerShell"
             },
             {
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
+            },
+            {
+                "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+                "guid": "{e72abb56-ab17-50cf-9780-9bbd9b2b850c}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/pwsh.png",
+                "name": "PowerShell",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe -l",
+                "guid": "{3c702b3d-317d-4f2e-be98-aaabb2cf0485}",
+                "hidden": false,
+                "icon": "%SystemDrive%\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "name": "Git Bash",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64",
+                "guid": "{b36af9df-efeb-4de3-a89b-f81a8cea2e55}",
+                "hidden": false,
+                "icon": "%SystemDrive%/msys64/mingw64.exe",
+                "name": "MSYS2 MINGW64",
+                "startingDirectory": "C:/msys64/home/%USERNAME%"
             }
         ]
     },
