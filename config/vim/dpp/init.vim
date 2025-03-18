@@ -44,6 +44,3 @@ autocmd MyAutoCmd User Dpp:makeStatePost
       \ : echohl WarningMsg
       \ | echomsg 'dpp make_state() is done'
       \ | echohl NONE
-
-filetype indent on
-syntax on

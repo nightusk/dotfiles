@@ -81,7 +81,22 @@ set wildmenu
 
 colorscheme torte
 
-packadd! editorconfig
+if has('nvim')
+  packadd! editorconfig
+else
+  if has('patch-9.1.1218')
+    packadd! editorconfig
+  endif
+endif
 packadd! termdebug
 
-source <script>:h/dpp/init.vim
+if has('nvim')
+  source <script>:h/dpp/init.vim
+else
+  if has('patch-9.1.0448')
+    source <script>:h/dpp/init.vim
+  endif
+endif
+
+filetype indent on
+syntax on
