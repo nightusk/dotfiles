@@ -1,0 +1,6 @@
+[[plugins]]
+repo = 'zah/nim.vim'
+
+[[plugins]]
+repo = 'ziglang/zig.vim'
+hooks_file = '$BASE_DIR/lang/zig.lua'

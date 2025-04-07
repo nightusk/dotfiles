@@ -18,10 +18,13 @@ export class Config extends BaseConfig {
     const hooksFiles: string[] = [];
     for (
       const tomlFile of [
-        "plugins.toml",
-        "ddc/plugins.toml",
-        "ddu/plugins.toml",
-        "lazy/plugins.toml",
+        ".",
+        "ddc",
+        "ddu",
+        "dpp",
+        "lang",
+        "lazy",
+        "nvim",
       ]
     ) {
       const toml = await args.dpp.extAction(
@@ -31,7 +34,7 @@ export class Config extends BaseConfig {
         "toml",
         "load",
         {
-          path: "$BASE_DIR/" + tomlFile,
+          path: "$BASE_DIR/" + tomlFile + "/plugins.toml",
           options: {
             lazy: tomlFile.startsWith("lazy"),
           },

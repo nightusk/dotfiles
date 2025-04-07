@@ -8,34 +8,6 @@ repo = 'cohama/lexima.vim'
 repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
-repo = 'nvim-orgmode/orgmode'
-hooks_file = '$BASE_DIR/orgmode.lua'
-
-[[plugins]]
-repo = 'nvim-treesitter/nvim-treesitter'
-hooks_file = '$BASE_DIR/treesitter.lua'
-
-[[plugins]]
-repo = 'Shougo/dpp-ext-installer'
-on_source = 'dpp.vim'
-
-[[plugins]]
-repo = 'Shougo/dpp-ext-lazy'
-on_source = 'dpp.vim'
-
-[[plugins]]
-repo = 'Shougo/dpp-ext-toml'
-on_source = 'dpp.vim'
-
-[[plugins]]
-repo = 'Shougo/dpp-protocol-git'
-on_source = 'dpp.vim'
-
-[[plugins]]
-repo = 'Shougo/dpp.vim'
-on_source = 'denops.vim'
-
-[[plugins]]
 repo = 'tpope/vim-commentary'
 
 [[plugins]]
@@ -46,13 +18,3 @@ repo = 'tpope/vim-unimpaired'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
-
-[[plugins]]
-repo = 'vim-denops/denops.vim'
-
-[[plugins]]
-repo = 'zah/nim.vim'
-
-[[plugins]]
-repo = 'ziglang/zig.vim'
-hooks_file = '$BASE_DIR/zig.lua'
