@@ -28,8 +28,5 @@ depends = 'denops.vim'
 hooks_file = '$BASE_DIR/ddc/hooks.vim'
 
 [[plugins]]
-repo = 'skk-dev/dict'
-
-[[plugins]]
 repo = 'vim-skk/skkeleton'
 hooks_file = '$BASE_DIR/ddc/skk.vim'

@@ -5,8 +5,9 @@ tmap <C-\> <Plug>(skkeleton-enable)
 
 function! s:skkeleton_init() abort
   call skkeleton#config({
-        \ 'globalDictionaries': ["~/.local/share/vim/dpp/repos/github.com/skk-dev/dict/SKK-JISYO.L"]
-        \ })
+  \ 'eggLikeNewline': v:true,
+  \ 'globalDictionaries': ["/usr/share/skk/SKK-JISYO.L"],
+  \ })
 endfunction
 augroup skkeleton-initialize-pre
   autocmd!
