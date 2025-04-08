@@ -1,6 +1,8 @@
 vim9script
 # vim: foldmethod=marker
 
+source $VIMRUNTIME/defaults.vim
+
 # {{{ options
 # {{{  1 important
 # }}}
@@ -13,8 +15,6 @@ set smartcase
 # {{{  3 tags
 # }}}
 # {{{  4 displaying text
-set scrolloff=5
-set nowrap
 set list
 set listchars+=extends:>
 set listchars+=precedes:<
@@ -38,17 +38,11 @@ set hidden
 # {{{ 10 printing
 # }}}
 # {{{ 11 messages and info
-set showcmd
-set ruler
 # }}}
 # {{{ 12 selecting text
 # }}}
 # {{{ 13 editing text
-set backspace+=indent
-set backspace+=eol
-set backspace+=start
 set showmatch
-set nrformats-=octal
 # }}}
 # {{{ 14 tabs and indenting
 # }}}
@@ -65,7 +59,6 @@ set autoread
 set noswapfile
 # }}}
 # {{{ 20 command line editing
-set wildmenu
 # }}}
 # {{{ 21 executing external commands
 # }}}
@@ -98,5 +91,3 @@ else
   endif
 endif
 
-filetype indent on
-syntax on
