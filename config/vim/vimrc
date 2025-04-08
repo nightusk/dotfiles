@@ -88,6 +88,8 @@ if has('nvim')
 else
   if has('patch-9.1.0448')
     source <script>:h/dpp/init.vim
+  else
+    source <script>:h/jetpack/init.vim
   endif
 endif
 

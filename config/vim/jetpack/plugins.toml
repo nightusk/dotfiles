@@ -1,0 +1,24 @@
+[[plugins]]
+repo = 'ctrolpvim/ctrlp.vim'
+hook_add = '''
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+'''
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'vim-skk/eskk.vim'
+hook_add = '''
+imap <C-\> <Plug>(eskk:enable)
+cmap <C-\> <Plug>(eskk:enable)
+tmap <C-\> <Plug>(eskk:enable)
+
+autocmd User eskk-initialize-pre call s:eskk_initial_pre()
+function! s:eskk_initial_pre()
+  let g:eskk#egg_like_newline = 1
+  let g:eskk#large_dictionary = { 'path': "/usr/share/skk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp' }
+endfunction
+'''
