@@ -1,7 +1,6 @@
 source $HOME/.profile
 
-autoload -Uz compinit promptinit
+autoload -Uz compinit
 compinit
-promptinit
 
-prompt walters
+eval "$(starship init zsh)"
