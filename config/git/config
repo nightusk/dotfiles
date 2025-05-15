@@ -1,13 +1,19 @@
 [core]
 	editor = vim
+	pager = delta
+[delta]
+	navigate = true
+	dark = true
 [diff]
 	tool = vimdiff
 [difftool]
 	prompt = false
 [init]
 	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 	tool = vimdiff
 [mergetool]
 	prompt = false
