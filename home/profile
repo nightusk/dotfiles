@@ -1,18 +1,27 @@
 # vim: filetype=sh
 export CARGO_HOME=$HOME/.local/share/cargo
 export DENO_INSTALL=$HOME/.local/share/deno
+export DOTNET_INSTALL_DIR=$HOME/.local/share/dotnet
+export DOTNET_ROOT=$DOTNET_INSTALL_DIR
+export GOPATH=$HOME/.local/share/go
 export RUSTUP_HOME=$HOME/.local/share/rustup
 
 for p in \
+  /snap/bin \
   $CARGO_HOME/bin \
   $DENO_INSTALL/bin \
+  $DOTNET_ROOT \
+  $DOTNET_ROOT/tools \
+  $GOPATH/bin \
   $HOME/.local/bin \
 
 do
-  case ":$PATH:" in
-    *:$p:*)
-      ;;
-    *)
-      PATH=$p:$PATH
-  esac
+  if [ -e $p ]; then
+    case ":$PATH:" in
+      *:$p:*)
+        ;;
+      *)
+        PATH=$p:$PATH
+    esac
+  fi
 done
